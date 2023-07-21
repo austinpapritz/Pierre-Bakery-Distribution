@@ -30,5 +30,14 @@ namespace PierresDistribution.Tests
             // Assert
             Assert.AreEqual(typeof(OrderItem), newOrderItem.GetType());
         }
+
+        [TestMethod]
+        public void OrderConstructor_CreateNewOrder_Order()
+        {
+            // Arrange
+            Order newOrder = new(071223);
+            // Assert
+            Assert.AreEqual(typeof(Order), newOrder.GetType());
+        }
     }
 }

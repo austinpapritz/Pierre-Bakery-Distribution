@@ -40,6 +40,16 @@ public class OrderItem
 
 public class Order
 {
+    private static List<Order> _orderList = new List<Order> { };
+    public int Id { get; }
+    public int Date { get; set; }
+
+    public Order(int date)
+    {
+        Date = date;
+        _orderList.Add(this);
+        Id = _orderList.Count;
+    }
 }
 
 // AddOrderItem() to Order
