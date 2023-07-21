@@ -17,7 +17,7 @@ public class Vendor
 
     public static Vendor GetVendorById(int id)
     {
-        // Code here
+        return _vendorList[id-1];
     }
 
     public static void ClearAll()

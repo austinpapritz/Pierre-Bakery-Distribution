@@ -22,12 +22,15 @@ namespace PierresDistribution.Tests;
         }
 
         [TestMethod]
-        public void GetVendorById_FindVendorById_Vendor()
+        public void GetVendorById_GetVendorById_Vendor()
         {
             // Arrange
             Vendor newVendor = new Vendor("Billy's Bakery");
+            int id = newVendor.Id;
             // Act
-
+            Vendor result = Vendor.GetVendorById(id);
             // Assert
+            Assert.AreEqual(result, newVendor);
+
         }
     }
