@@ -1,8 +1,11 @@
-﻿namespace PierresDistribution.Controllers;
+﻿using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
+
+namespace PierresDistribution.Controllers;
 
 public class HomeController : Controller
 {
-    [Route("/")]
+    [HttpGet("/")]
     public ActionResult Index()
     { 
         return View(); 

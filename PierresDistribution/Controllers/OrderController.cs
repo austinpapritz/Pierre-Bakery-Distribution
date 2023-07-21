@@ -1,8 +1,11 @@
+using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
+
 namespace PierresDistribution.Controllers;
 
 public class OrderController : Controller
 {
-    [Route("/")]
+    [HttpGet("/")]
     public ActionResult Index()
     { 
         return View(); 
