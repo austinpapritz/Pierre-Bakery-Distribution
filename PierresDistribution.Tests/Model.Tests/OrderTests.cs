@@ -20,5 +20,15 @@ namespace PierresDistribution.Tests
             // Assert
             Assert.AreEqual(typeof(Pastry), newPastry.GetType());
         }
+
+        [TestMethod]
+        public void OrderItemConstructor_CreateAnOrderItem_OrderItem()
+        {
+            // Arrange
+            Pastry newPastry = new("Pretzel", 4.5m);
+            OrderItem newOrderItem = new(newPastry, 5);
+            // Assert
+            Assert.AreEqual(typeof(OrderItem), newOrderItem.GetType());
+        }
     }
 }
