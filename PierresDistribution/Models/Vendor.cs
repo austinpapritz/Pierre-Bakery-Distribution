@@ -5,14 +5,14 @@ public class Vendor
     public string Name { get; set; }
     public int Id { get; }
 
-    public List<List<Order>> VendorOrders { get; set; }
+    public List<Order> VendorOrders { get; set; }
 
     public Vendor(string name)
     {
         Name = name;
         _vendorList.Add(this);
         Id = _vendorList.Count;
-        VendorOrders = new List<List<Order>> { };
+        VendorOrders = new List<Order> { };
     }
 
     public static Vendor GetVendorById(int id)
@@ -29,4 +29,5 @@ public class Vendor
     {
         _vendorList.Clear();
     }
+
 }
