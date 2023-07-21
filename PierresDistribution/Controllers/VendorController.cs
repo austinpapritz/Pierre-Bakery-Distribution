@@ -5,7 +5,7 @@ namespace PierresDistribution.Controllers;
 
 public class VendorController : Controller
 {
-    [HttpGet("/")]
+    [HttpGet("/vendors")]
     public ActionResult Index()
     { 
         return View(); 
