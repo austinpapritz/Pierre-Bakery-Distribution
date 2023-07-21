@@ -59,13 +59,29 @@ public class Order
         Items = new List<OrderItem>();
     }
 
+        public Order(int date, params OrderItem[] items)
+    {
+        Date = date;
+        _orderList.Add(this);
+        Id = _orderList.Count;
+        Items = new List<OrderItem>(items);
+
+    }
+
     public void AddOrderItem(OrderItem item) 
     {
         Items.Add(item);
     }
 
-// GetAll() OrderItems in an order
+    public static List<Order> GetAll()
+    {
+        return _orderList;
+    }
 
-// ClearAll OrderItems from an order
+    public static void ClearAll()
+    {
+        _orderList.Clear();
+    }
+
 }
 

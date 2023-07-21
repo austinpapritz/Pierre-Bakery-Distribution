@@ -1,13 +1,13 @@
 namespace PierresDistribution.Tests;
 
     [TestClass]
-    public class VendorTests: IDisposable
+    public class VendorTests : IDisposable
     {
 
-    public void Dispose()
-    {
-        Vendor.ClearAll();
-    }
+        public void Dispose()
+        {
+            Vendor.ClearAll();
+        }
     
         // Tests go here
         [TestMethod]
