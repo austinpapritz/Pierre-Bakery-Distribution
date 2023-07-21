@@ -11,5 +11,14 @@ namespace PierresDistribution.Tests
             // Assert
             Assert.AreEqual(typeof(Bread), newBread.GetType());
         }
+
+        [TestMethod]
+        public void PastryConstructor_CreatePastryProduct_Pastry()
+        {
+            // Arrange
+            Pastry newPastry = new("Pretzel", 4.5m);
+            // Assert
+            Assert.AreEqual(typeof(Pastry), newPastry.GetType());
+        }
     }
 }
