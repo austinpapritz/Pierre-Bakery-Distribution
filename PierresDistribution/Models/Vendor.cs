@@ -15,6 +15,18 @@ public class Vendor
         VendorOrders = new List<Order> { };
     }
 
+    // Method for adding Order to list
+
+    // GetOrderByDay()
+
+    // GetOrderByWeek()
+
+    // GetOrderByMonth()
+
+    // GetOrderByYear()
+
+    // GetOrderByVendorId()
+    
     public static Vendor GetVendorById(int id)
     {
         return _vendorList[id-1];

@@ -41,3 +41,9 @@ public class OrderItem
 public class Order
 {
 }
+
+// AddOrderItem() to Order
+
+// GetAll() OrderItems in an order
+
+// ClearAll OrderItems from an order
