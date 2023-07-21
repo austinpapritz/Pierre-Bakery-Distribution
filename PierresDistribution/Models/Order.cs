@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Http.Features;
+
 namespace PierresDistribution.Models;
 
 public class Product
@@ -49,14 +51,16 @@ public class Order
     public int Date { get; set; }
     public List<OrderItem> Items { get; set; }
 
-    // Add OrderPrice total
+    public decimal TotalPrice { get; }
 
+    // Constructors
     public Order(int date)
     {
         Date = date;
         _orderList.Add(this);
         Id = _orderList.Count;
         Items = new List<OrderItem>();
+        TotalPrice = TotalPriceCalc(Items);
     }
 
         public Order(int date, params OrderItem[] items)
@@ -65,7 +69,18 @@ public class Order
         _orderList.Add(this);
         Id = _orderList.Count;
         Items = new List<OrderItem>(items);
+        TotalPrice = TotalPriceCalc(Items);
+    }
 
+    // Methods
+
+    public static decimal TotalPriceCalc(List<OrderItem> items)
+    {
+        decimal count = 0;
+        foreach (OrderItem item in items){
+            count += item.Subtotal;
+        }
+        return count;
     }
 
     public void AddOrderItem(OrderItem item) 

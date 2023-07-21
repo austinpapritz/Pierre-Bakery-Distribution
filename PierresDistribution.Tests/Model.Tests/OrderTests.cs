@@ -95,4 +95,27 @@ public class OrderTests : IDisposable
         Assert.AreEqual(testPrice, result);
     }
 
+    [TestMethod]
+    public void TotalPriceCalc_SumOfSubtotalsInOrder_Decimal()
+    {
+        // Arrange
+            // OrderItem 1
+            Pastry newPastry = new("Pretzel", 4m);
+            OrderItem newOrderItem = new(newPastry, 5);
+            // OrderItem 2
+            Pastry newPastry2 = new("Eclaire", 5m);
+            OrderItem newOrderItem2 = new(newPastry2, 2);
+            // OrderItem 3
+            Bread newBread = new("Whole Wheat", 3m);
+            OrderItem newOrderItem3 = new(newBread, 10);
+            // Create Order
+            Order newOrder = new(071623, newOrderItem, newOrderItem2, newOrderItem3);
+            // Test total
+            decimal testTotal = (4 * 5) + (5 * 2) + (3 * 10);
+        // Act
+        decimal result = newOrder.TotalPrice;
+        // Assert
+        Assert.AreEqual(testTotal, result);
+    }
+
 }
