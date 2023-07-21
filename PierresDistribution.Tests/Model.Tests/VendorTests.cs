@@ -1,5 +1,3 @@
-using PierresDistribution.Models;
-
 namespace PierresDistribution.Tests;
 
     [TestClass]
