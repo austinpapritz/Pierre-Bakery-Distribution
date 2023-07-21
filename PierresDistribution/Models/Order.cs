@@ -33,7 +33,7 @@ public class OrderItem
 {
     public Product Product { get; set; }
     public int Quantity { get; set; }
-    public decimal Subtotal{ get; }
+    public decimal Subtotal { get; }
     public OrderItem(Product product, int qty)
     {
         Product = product;
@@ -41,7 +41,7 @@ public class OrderItem
         Subtotal = qty * Product.Price;
     }
 
-    
+
 }
 
 public class Order
@@ -63,7 +63,7 @@ public class Order
         TotalPrice = TotalPriceCalc(Items);
     }
 
-        public Order(int date, params OrderItem[] items)
+    public Order(int date, params OrderItem[] items)
     {
         Date = date;
         _orderList.Add(this);
@@ -73,17 +73,17 @@ public class Order
     }
 
     // Methods
-
     public static decimal TotalPriceCalc(List<OrderItem> items)
     {
         decimal count = 0;
-        foreach (OrderItem item in items){
+        foreach (OrderItem item in items)
+        {
             count += item.Subtotal;
         }
         return count;
     }
 
-    public void AddOrderItem(OrderItem item) 
+    public void AddOrderItem(OrderItem item)
     {
         Items.Add(item);
     }

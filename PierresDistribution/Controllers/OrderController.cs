@@ -1,6 +1,6 @@
-﻿namespace PierresDistribution.Controllers;
+namespace PierresDistribution.Controllers;
 
-public class HomeController : Controller
+public class OrderController : Controller
 {
     [Route("/")]
     public ActionResult Index()

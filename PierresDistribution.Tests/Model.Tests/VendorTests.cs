@@ -9,7 +9,6 @@ namespace PierresDistribution.Tests;
             Vendor.ClearAll();
         }
     
-        // Tests go here
         [TestMethod]
         public void VendorConstructor_ConstructANewVendor_Vendor()
         {
@@ -44,4 +43,6 @@ namespace PierresDistribution.Tests;
             // Assert
             Assert.AreEqual(testList.Count, result.Count);
         }
+
+        
     }
