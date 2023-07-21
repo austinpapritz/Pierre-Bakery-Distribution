@@ -20,6 +20,11 @@ public class Vendor
         return _vendorList[id-1];
     }
 
+    public static List<Vendor> GetAll()
+    {
+        return _vendorList;
+    }
+
     public static void ClearAll()
     {
         _vendorList.Clear();

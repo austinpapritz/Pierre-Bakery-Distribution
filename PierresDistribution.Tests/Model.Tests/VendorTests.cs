@@ -31,6 +31,19 @@ namespace PierresDistribution.Tests;
             Vendor result = Vendor.GetVendorById(id);
             // Assert
             Assert.AreEqual(result, newVendor);
+        }
 
+        [TestMethod]
+        public void GetAll_ReturnListOfAllVendors_ListVendor()
+        {
+            // Arrange
+            Vendor vendor1 = new("vendor1");
+            Vendor vendor2 = new("vendor2");
+            Vendor vendor3 = new("vendor3");
+            List<Vendor> testList = new List<Vendor> { vendor1, vendor2, vendor3};
+            // Act
+            List<Vendor> result = Vendor.GetAll();
+            // Assert
+            Assert.AreEqual(testList.Count, result.Count);
         }
     }
