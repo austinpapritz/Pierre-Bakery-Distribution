@@ -39,5 +39,19 @@ namespace PierresDistribution.Tests
             // Assert
             Assert.AreEqual(typeof(Order), newOrder.GetType());
         }
+
+        [TestMethod]
+        public void AddOrderItem_AddOrderItemToOrder_Void()
+        {
+            // Arrange
+            Pastry newPastry = new("Pretzel", 4.5m);
+            OrderItem newOrderItem = new(newPastry, 5);
+            Order newOrder = new(071223);
+            List<OrderItem> testList = new List<OrderItem> {newOrderItem};
+            // Act
+            newOrder.AddOrderItem(newOrderItem);
+            // Assert
+            CollectionAssert.AreEquivalent(testList, newOrder.Items);
+        }
     }
 }

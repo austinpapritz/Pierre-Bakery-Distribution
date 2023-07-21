@@ -31,11 +31,15 @@ public class OrderItem
 {
     public Product Product { get; set; }
     public int Quantity { get; set; }
+
+    // Add price field 
     public OrderItem(Product product, int qty)
     {
         Product = product;
         Quantity = qty;
     }
+
+    
 }
 
 public class Order
@@ -43,17 +47,25 @@ public class Order
     private static List<Order> _orderList = new List<Order> { };
     public int Id { get; }
     public int Date { get; set; }
+    public List<OrderItem> Items { get; set; }
+
+    // Add Order price total
 
     public Order(int date)
     {
         Date = date;
         _orderList.Add(this);
         Id = _orderList.Count;
+        Items = new List<OrderItem>();
     }
-}
 
-// AddOrderItem() to Order
+    public void AddOrderItem(OrderItem item) 
+    {
+        Items.Add(item);
+    }
 
 // GetAll() OrderItems in an order
 
 // ClearAll OrderItems from an order
+}
+
