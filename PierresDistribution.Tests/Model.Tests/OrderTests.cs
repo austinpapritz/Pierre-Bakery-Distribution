@@ -51,7 +51,7 @@ namespace PierresDistribution.Tests
             // Act
             newOrder.AddOrderItem(newOrderItem);
             // Assert
-            CollectionAssert.AreEquivalent(testList, newOrder.Items);
+            CollectionAssert.AreEqual(testList, newOrder.Items);
         }
     }
 }
