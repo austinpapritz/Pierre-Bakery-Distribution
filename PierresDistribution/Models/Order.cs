@@ -31,12 +31,12 @@ public class OrderItem
 {
     public Product Product { get; set; }
     public int Quantity { get; set; }
-
-    // Add price field 
+    public decimal Subtotal{ get; }
     public OrderItem(Product product, int qty)
     {
         Product = product;
         Quantity = qty;
+        Subtotal = qty * Product.Price;
     }
 
     
@@ -49,7 +49,7 @@ public class Order
     public int Date { get; set; }
     public List<OrderItem> Items { get; set; }
 
-    // Add Order price total
+    // Add OrderPrice total
 
     public Order(int date)
     {

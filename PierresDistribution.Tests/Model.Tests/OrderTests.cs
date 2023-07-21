@@ -82,4 +82,17 @@ public class OrderTests : IDisposable
         CollectionAssert.AreEqual(testList, result);
     }
 
+    [TestMethod]
+    public void OrderItemSubtotal_CalculateProductQtyAndProductPrice_Decimal()
+    {
+        // Arrange
+        decimal testPrice = 4.5m * 5;
+        Pastry newPastry = new("Pretzel", 4.5m);
+        OrderItem newOrderItem = new(newPastry, 5);
+        // Act
+        decimal result = newOrderItem.Subtotal;
+        // Assert
+        Assert.AreEqual(testPrice, result);
+    }
+
 }
