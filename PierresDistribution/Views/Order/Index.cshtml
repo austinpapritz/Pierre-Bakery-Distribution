@@ -25,18 +25,17 @@
     </div>
   </header>
   <body>
-    <div class="ordercard-container">
+    <div class="order-card-container">
       @foreach (Order order in @Model.VendorOrders){
-        <div classname="ordercard-content">
-          <h3 class="order-date-li">Deliver on @order.Date</h3>
-          <h4 class="order-details">Details: @order.Details</h4>
-          <ul class="order-ul">
-          @foreach (OrderItem item in order.Items){
-            <li class="order-item-li">@item.Product.Name (@item.Quantity) $@item.Subtotal</li>
-          }
-          </ul>
-          <h5>Total: $@order.TotalPrice</h5>
-          <hr>
+        <div class="order-card-content">
+          <h3 class="order-date-li"><strong>Deliver on @order.Date</strong></h3>
+          <h4 class="order-details">Details: <u>@order.Details</u></h4>
+          <ol class="order-ol">
+            @foreach (OrderItem item in order.Items){
+              <li class="order-item-li"><i>@item.Product.Name</i> <strong>(@item.Quantity)</strong> <p class="item-subtotal">$@item.Subtotal</p></li>
+            }
+          </ol>
+          <h5 class="order-total">Order Total: $@order.TotalPrice</h5>
         </div>
       }
     </div>
