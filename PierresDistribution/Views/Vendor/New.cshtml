@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -10,18 +10,14 @@
     crossorigin="anonymous">
   </head>
   <body>
-    <h1>Vendors</h1>
-    <p>Click a vendor to see their orders</p>
+    <h1>Add a new vendors</h1>
 
-    <ul>
-      @foreach (Vendor vendor in @Model)
-      {
-        <li><a href="/vendors/@vendor.Id/orders">@vendor.Name</a></li>
-      }
-    </ul>
-
-    <form action="/vendors/new" action="get">
-      <button type="submit">Add vendor</button>
+    <form action="/vendors" method="post">
+        @* Name *@
+        <label> Vendor name
+            <input id="vendorName" name="vendorName" type="text">
+        </label>
+        <button type="submit">Submit</button>
     </form>
 
 

@@ -11,4 +11,18 @@ public class VendorController : Controller
         List<Vendor> allVendors = Vendor.GetAll();
         return View(allVendors);
     }
+
+    [HttpPost("/vendors")]
+    public ActionResult Create(string vendorName)
+    {
+        Vendor newVendor = new(vendorName);
+        return RedirectToAction("Index", newVendor);
+    }
+
+    [HttpGet("/vendors/new")]
+    public ActionResult New()
+    {
+        return View();
+    }
+
 }
