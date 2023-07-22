@@ -20,7 +20,7 @@ _Pierre's Bakery Distribution is a web app that allows you to see the list of ev
 
 ## Setup/Installation Requirements
 
-* _If the netlify deployable is broken, you can view the site by doing the following_
+* _If there's no deployable site do the following_
 * _`Download ZIP` by clicking on the big green `Code` button_
 * _Extract the ZIP file_
 * _Open the project folder in your favorite code editor (e.g., VS Code, Xcode, Atom)_
