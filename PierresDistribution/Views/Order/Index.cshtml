@@ -10,7 +10,6 @@
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" 
     crossorigin="anonymous">
   </head>
-  <body>
   <header>
     <h1>Orders for @Model.Name</h1>
     <div class="navbar">
@@ -18,12 +17,11 @@
         <button class="nav-button" type="submit">Home</button>
       </form>     
       <form action="/vendors/new" action="get">
-        <button class="nav-button last-button" type="submit">Add vendor</button>
+        <button class="nav-button last-button" type="submit">New vendor</button>
       </form>
     </div>
   </header>
-    
-
+  <body>
     @foreach (Order order in @Model.VendorOrders){
     <div classname="order-card">
       <div classname="order-content">
