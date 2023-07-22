@@ -132,6 +132,33 @@ header form {
   font-weight: 700;
 }
 
+.vendor-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #ffffffa7;
+  border: 2px solid #888888; 
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); 
+  border-radius: 15px;
+
+  margin-top: 10px;
+}
+
+.vendor-form-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 25px;
+}
+
+.vendor-form-container label {
+  font-size: 25px;
+  font-weight: 500;
+  margin-top: 15px;
+}
+
 /* Order css */
 .order-card-container {
   margin: 10px 0;
@@ -151,17 +178,31 @@ header form {
   background: #ffffffa7;
 }
 
-
 .order-form-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 
   background: #ffffffa7;
   border: 2px solid #888888; 
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); 
   border-radius: 15px;
+
+  margin-top: 10px;
+}
+
+.order-form-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 25px;
+}
+
+.order-form-container label {
+  font-size: 25px;
+  font-weight: 500;
+  margin-top: 15px;
 }
 
 .order-ol {
@@ -184,3 +225,4 @@ header form {
   text-align: end;
   margin-right: 78%;
 }
+
