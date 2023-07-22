@@ -16,7 +16,7 @@ public class VendorController : Controller
     public ActionResult Create(string name, string description)
     {
         Vendor newVendor = new(name, description);
-        return RedirectToAction("Index", "Order", new { vendorId = newVendor.Id });
+        return RedirectToAction("Index");
     }
 
     [HttpGet("/vendors/new")]

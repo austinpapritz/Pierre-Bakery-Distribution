@@ -66,6 +66,19 @@ header form {
   padding: 0;
 }
 
+/* Homepage */
+.img-container {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.img-container img {
+  height: 600px;
+  border: solid #888888 3px;
+  border-radius: 50%;
+}
+
 /* Vendor css */
 .alpha-container {
   display: flex;

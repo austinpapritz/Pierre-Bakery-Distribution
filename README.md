@@ -7,9 +7,5 @@ Add multiple orders
 View orders by date
 Edit orders
 
-
-Display vendor and order details
-make vendor cards
-visibility and readability
 take ten min break
 README
