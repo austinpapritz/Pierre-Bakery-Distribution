@@ -11,4 +11,11 @@ public class OrderController : Controller
         Vendor vendor = Vendor.GetVendorById(vendorId);
         return View(vendor); 
     }
+
+    [HttpGet("/vendors/{vendorId}/orders/new")]
+        public ActionResult New(int vendorId)
+    {
+        Vendor vendor = Vendor.GetVendorById(vendorId);
+        return View(vendor);
+    }
 }

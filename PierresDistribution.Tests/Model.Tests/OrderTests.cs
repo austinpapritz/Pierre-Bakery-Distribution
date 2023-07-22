@@ -118,4 +118,16 @@ public class OrderTests : IDisposable
         Assert.AreEqual(testTotal, result);
     }
 
+    [TestMethod]
+    public void GetAll_GetAllProducts_ListProduct()
+    {
+        // Arrange
+        List<Product> testList = Product._productList;
+        List<Product> result = new();
+        // Act
+        result = Product.GetAll();
+        // Assert
+        Assert.AreEqual(testList, result);
+    }
+
 }

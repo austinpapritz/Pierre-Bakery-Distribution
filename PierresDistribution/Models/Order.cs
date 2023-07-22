@@ -4,6 +4,7 @@ namespace PierresDistribution.Models;
 
 public class Product
 {
+    public static List<Product> _productList = new() { };
     public string Name { get; set; }
     public decimal Price { get; set; }
 
@@ -11,7 +12,13 @@ public class Product
     {
         Name = name;
         Price = price;
+        _productList.Add(this);
     }
+
+    public static List<Product> GetAll()
+    {
+        return _productList;
+    } 
 }
 
 public class Bread : Product
