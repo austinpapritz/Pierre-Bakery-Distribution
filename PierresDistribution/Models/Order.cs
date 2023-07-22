@@ -7,7 +7,6 @@ public class Product
     public static List<Product> _productList = new() { };
     public string Name { get; set; }
     public decimal Price { get; set; }
-
     public Product(string name, decimal price)
     {
         Name = name;
@@ -19,6 +18,10 @@ public class Product
     {
         return _productList;
     } 
+    public static Product FindByName(string name)
+    {
+        return _productList.FirstOrDefault(product => product.Name == name);
+    }
 }
 
 public class Bread : Product

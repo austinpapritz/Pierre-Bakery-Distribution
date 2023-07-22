@@ -130,4 +130,15 @@ public class OrderTests : IDisposable
         Assert.AreEqual(testList, result);
     }
 
+    [TestMethod]
+    public void FindByName_FindAProductByName_Product()
+    {
+        // Arrange
+        Pastry testProduct = new("Macaron", 8.99m);
+        // Act
+        Product result = Product.FindByName("Macaron");
+        // Assert
+        Assert.AreEqual(testProduct, result);
+    }
+
 }
