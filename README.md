@@ -20,7 +20,7 @@ _Pierre's Bakery Distribution is a web app that allows you to see the list of ev
 
 ## Setup/Installation Requirements
 
-* _If there's no deployable site do the following"_
+_If there's no deployable site do the following:_
 * _`Download ZIP` by clicking on the big green `Code` button._
 * _Extract the ZIP file._
 * _Open the project folder in your favorite code editor (e.g., VS Code, Xcode, Atom)._
