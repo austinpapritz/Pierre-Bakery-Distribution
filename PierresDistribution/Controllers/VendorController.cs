@@ -8,6 +8,7 @@ public class VendorController : Controller
     [HttpGet("/vendors")]
     public ActionResult Index()
     { 
-        return View(); 
+        List<Vendor> allVendors = Vendor.GetAll();
+        return View(allVendors);
     }
 }
