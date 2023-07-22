@@ -14,7 +14,7 @@
 
 ## Description
 
-_Pierre's Bakery Distributionis a web app that allows you to see the list of every vendor working with Pierre's Bakery and all of their orders. There are forms to add both new vendors and new orders. This app helps you stay organized by clearly showing the order details, item quantity, delivery date, and total price_
+_Pierre's Bakery Distribution is a web app that allows you to see the list of every vendor working with Pierre's Bakery and all of their orders. Navigate to the correct form to add either a new vendor or order. This app helps you stay organized by clearly showing a vendor's complete order list; including order details, item quantity, delivery date, and total price_
 
 ![New order form screenshot](/PierresDistribution/wwwroot/orderform_ss.png)
 
