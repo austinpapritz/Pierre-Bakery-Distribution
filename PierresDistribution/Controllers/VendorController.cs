@@ -13,10 +13,10 @@ public class VendorController : Controller
     }
 
     [HttpPost("/vendors")]
-    public ActionResult Create(string vendorName)
+    public ActionResult Create(string name, string description)
     {
-        Vendor newVendor = new(vendorName);
-        return RedirectToAction("Index", newVendor);
+        Vendor newVendor = new(name, description);
+        return RedirectToAction("Index", "Order", new { vendorId = newVendor.Id });
     }
 
     [HttpGet("/vendors/new")]
