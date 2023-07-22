@@ -22,22 +22,21 @@
     </div>
   </header>
   <body>
-    <h2>Click a vendor to see their orders</h2>
-
-    <div class="vendor-card-container">
-      @foreach (Vendor vendor in @Model)
-      {
-      <div class="vendor-card-content">
-        <ul class="vendor-ul">
-          <li class="vendorName-li"><a href="/vendors/@vendor.Id/orders">@vendor.Name</a></li>
-          <li class="vendorDescription-li">@vendor.Description</li>
-        </ul>
+    <div class="alpha-container">
+      <div class="vendor-card-container">
+        <h2>Click a vendor to see their orders</h2>
+        @foreach (Vendor vendor in @Model)
+        {     
+          <a class="vendor-link" href="/vendors/@vendor.Id/orders">
+            <div class="vendor-card-content">
+              <ul class="vendor-ul">
+                <li class="vendor-name-li vendor-li"><u>@vendor.Name</u></li>
+                <li class="vendor-description-li vendor-li">@vendor.Description</li>
+              </ul>
+            </div>
+          </a>
+        }
       </div>
-      }
     </div>
-
-
-
-
   </body>
 </html>
