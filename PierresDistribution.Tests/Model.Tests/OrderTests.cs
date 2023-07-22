@@ -141,4 +141,15 @@ public class OrderTests : IDisposable
         Assert.AreEqual(testProduct, result);
     }
 
+    [TestMethod]
+    public void FindByDate_FindOrderByDate_Order()
+    {
+        // Arrange
+        Order newOrder = new(010123);
+        // Act
+        Order result = Order.FindByDate(010123);
+        // Assert
+        Assert.AreEqual(newOrder, result);
+    }
+
 }

@@ -93,6 +93,11 @@ public class Order
         return count;
     }
 
+    public static Order FindByDate(int date)
+    {
+        return _orderList.FirstOrDefault(order => order.Date == date);
+    }
+
     public void AddOrderItem(OrderItem item)
     {
         Items.Add(item);
