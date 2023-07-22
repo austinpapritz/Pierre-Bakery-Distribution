@@ -18,9 +18,9 @@ namespace PierresDistribution.Models
             Pastry pastry3 = new Pastry("Eclaire", 4.0m);
 
             // Test vendors.
-            Vendor vendor1 = new("Billy's Bakery");
-            Vendor vendor2 = new("Crazy Croissants");
-            Vendor vendor3 = new("Bread-O-Rama");
+            Vendor vendor1 = new("Billy's Bakery", "Family-owned corner shop downtown.");
+            Vendor vendor2 = new("Crazy Croissants", "Traveling booth for events and fairs.");
+            Vendor vendor3 = new("Bread-O-Rama", "Bread distributor for major regional bread labels.");
 
             // Create 5 different orders and add to vendor1's order list.
             for (int i = 0; i < 5; i++)
@@ -37,8 +37,9 @@ namespace PierresDistribution.Models
                 OrderItem orderItem4 = new OrderItem(pastry1, quantity);
                 OrderItem orderItem5 = new OrderItem(bread2, quantity);
                 OrderItem orderItem6 = new OrderItem(pastry3, quantity);
+                string details = "Drop off at south-west door, delivery parking available.";
 
-                Order order = new Order(orderDate, orderItem1, orderItem2, orderItem3, orderItem4, orderItem5, orderItem6);
+                Order order = new Order(orderDate, details, orderItem1, orderItem2, orderItem3, orderItem4, orderItem5, orderItem6);
 
                 vendor1.AddOrder(order);
             }
@@ -58,8 +59,9 @@ namespace PierresDistribution.Models
                 OrderItem orderItem4 = new OrderItem(pastry1, quantity);
                 OrderItem orderItem5 = new OrderItem(bread2, quantity);
                 OrderItem orderItem6 = new OrderItem(pastry3, quantity);
+                string details = "Best to split dailies into multiple deliveries: one morning, one afternoon.";
 
-                Order order = new Order(orderDate, orderItem1, orderItem2, orderItem3, orderItem4, orderItem5, orderItem6);
+                Order order = new Order(orderDate, details, orderItem1, orderItem2, orderItem3, orderItem4, orderItem5, orderItem6);
 
                 vendor2.AddOrder(order);
             }
@@ -79,8 +81,9 @@ namespace PierresDistribution.Models
                 OrderItem orderItem4 = new OrderItem(pastry1, quantity);
                 OrderItem orderItem5 = new OrderItem(bread2, quantity);
                 OrderItem orderItem6 = new OrderItem(pastry3, quantity);
+                string details = "Risen, unbaked dough only.";
 
-                Order order = new Order(orderDate, orderItem1, orderItem2, orderItem3, orderItem4, orderItem5, orderItem6);
+                Order order = new Order(orderDate, details, orderItem1, orderItem2, orderItem3, orderItem4, orderItem5, orderItem6);
 
                 vendor3.AddOrder(order);
             }

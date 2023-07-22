@@ -15,30 +15,30 @@
     <div class="navbar">
       <form action="/" action="get">
         <button class="nav-button" type="submit">Home</button>
-      </form>     
+      </form>
+      <form action="/vendors/@Model.Id/orders/new" action="get">
+        <button class="nav-button" type="submit">Add order</button>
+      </form>
       <form action="/vendors/new" action="get">
         <button class="nav-button last-button" type="submit">New Vendor</button>
       </form>
     </div>
   </header>
   <body>
-    @foreach (Order order in @Model.VendorOrders){
-    <div classname="order-card">
-      <div classname="order-content">
-        <h3>Deliver on @order.Date</h3>
-        <ul>
-        @foreach (OrderItem item in order.Items){
-          <li>@item.Product.Name (@item.Quantity) $@item.Subtotal</li>
-        }
-        </ul>
-        <h5>Total: $@order.TotalPrice</h5>
-        <hr>
-      </div>
+    <div class="ordercard-container">
+      @foreach (Order order in @Model.VendorOrders){
+        <div classname="ordercard-content">
+          <h3 class="order-date-li">Deliver on @order.Date</h3>
+          <h4 class="order-details">Details: @order.Details</h4>
+          <ul class="order-ul">
+          @foreach (OrderItem item in order.Items){
+            <li class="order-item-li">@item.Product.Name (@item.Quantity) $@item.Subtotal</li>
+          }
+          </ul>
+          <h5>Total: $@order.TotalPrice</h5>
+          <hr>
+        </div>
+      }
     </div>
-    }
-
-    <form action="/vendors/@Model.Id/orders/new" action="get">
-      <button type="submit">Add order</button>
-    </form>
   </body>
 </html>

@@ -24,12 +24,17 @@
   <body>
     <h2>Click a vendor to see their orders</h2>
 
-    <ul>
+    <div class="vendorcard-container">
       @foreach (Vendor vendor in @Model)
       {
-        <li><a href="/vendors/@vendor.Id/orders">@vendor.Name</a></li>
+      <div class="vendorcard-content">
+        <ul class="vendor-ul">
+          <li class="vendorName-li"><a href="/vendors/@vendor.Id/orders">@vendor.Name</a></li>
+          <li class="vendorDescription-li">@vendor.Description</li>
+        </ul>
+      </div>
       }
-    </ul>
+    </div>
 
 
 
