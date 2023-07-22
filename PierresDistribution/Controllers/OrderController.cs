@@ -6,8 +6,9 @@ namespace PierresDistribution.Controllers;
 public class OrderController : Controller
 {
     [HttpGet("/vendors/{vendorId}/orders")]
-    public ActionResult Index()
+    public ActionResult Index(int vendorId)
     { 
-        return View(); 
+        Vendor vendor = Vendor.GetVendorById(vendorId);
+        return View(vendor); 
     }
 }

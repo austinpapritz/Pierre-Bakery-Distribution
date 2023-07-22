@@ -15,6 +15,7 @@ public class Vendor
         VendorOrders = new List<Order> { };
     }
 
+
     // Method for adding Order to list
 
     // GetOrderByDay()
@@ -27,7 +28,10 @@ public class Vendor
 
     // GetOrderByVendorId()
 
-    // AddOrderToVendorList();
+    public static AddOrder(params Order[] orders)
+    {
+        VendorOrders.Add(orders);
+    }
 
     public static Vendor GetVendorById(int id)
     {

@@ -9,5 +9,20 @@
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" 
     crossorigin="anonymous">
   </head>
-  <body></body>
+  <body>
+    <h1>Orders for @Model.Name</h1>
+
+    @foreach (Order order in @Model.VendorOrders){
+    <div classname="order-card">
+      <div classname="order-content">
+        <h3>Deliver on @order.Date</h3>
+        <ul>
+        @foreach (OrderItem item in order.Items){
+          <li>@item.Product.Name (@item.Quantity)</li>
+        }
+        </ul>
+      </div>
+    </div>
+    }
+  </body>
 </html>
