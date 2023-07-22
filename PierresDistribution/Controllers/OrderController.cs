@@ -25,7 +25,7 @@ public class OrderController : Controller
     }
 
     [HttpPost("/vendors/{vendorId}/orders")]
-    public ActionResult Create( int vendorId, string product, decimal price, int quantity, int day, int month, int year)
+    public ActionResult Create( int vendorId, string product, decimal price, int quantity, int day, int month, int year, string details)
     {
         // Find Product, combine it with the quantity value to make an OrderItem
         Product newProduct = Product.FindByName(product);
@@ -33,7 +33,7 @@ public class OrderController : Controller
         // Combine date values into one number
         int dateAsNumber = int.Parse(day.ToString("00") + month.ToString("00") + year.ToString("00"));
         // Create new order, add the OrderItem to the order
-        Order newOrder = new(dateAsNumber);
+        Order newOrder = new(dateAsNumber, details);
         newOrder.AddOrderItem(newOrderItem);
         // Grab the vendor via Id and add the order their order list
         Vendor vendor = Vendor.GetVendorById(vendorId);

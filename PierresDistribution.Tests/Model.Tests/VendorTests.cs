@@ -51,7 +51,7 @@ namespace PierresDistribution.Tests;
             Order order1 = new(071223);
             Order order2 = new(071323);
             Order order3 = new(071423);
-            Vendor vendor = new("Vendor Name");
+            Vendor vendor = new("Vendor Name2");
             List<Order> testList = new List<Order> { order1, order2, order3};
             List<Order> result = vendor.VendorOrders;
             // Act
@@ -62,5 +62,5 @@ namespace PierresDistribution.Tests;
             CollectionAssert.AreEqual(testList, result);
         }
 
-        
+
     }

@@ -3,6 +3,8 @@ public class Vendor
 {
     private static List<Vendor> _vendorList = new() { };
     public string Name { get; set; }
+
+    public string Description { get; set; }
     public int Id { get; }
 
     public List<Order> VendorOrders { get; set; }
@@ -10,6 +12,15 @@ public class Vendor
     public Vendor(string name)
     {
         Name = name;
+        _vendorList.Add(this);
+        Id = _vendorList.Count;
+        VendorOrders = new List<Order> { };
+    }
+
+    public Vendor(string name, string description)
+    {
+        Name = name;
+        Description = description;
         _vendorList.Add(this);
         Id = _vendorList.Count;
         VendorOrders = new List<Order> { };

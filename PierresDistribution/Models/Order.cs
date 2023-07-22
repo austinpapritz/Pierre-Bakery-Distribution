@@ -57,11 +57,14 @@ public class OrderItem
 public class Order
 {
     private static List<Order> _orderList = new List<Order> { };
+
     public int Id { get; }
     public int Date { get; set; }
+    public string Details { get; set; }
+
     public List<OrderItem> Items { get; set; }
 
-    public decimal TotalPrice { get; }
+    public decimal TotalPrice { get; set; }
 
     // Constructors
     public Order(int date)
@@ -73,9 +76,29 @@ public class Order
         TotalPrice = TotalPriceCalc(Items);
     }
 
+    public Order(int date, string details)
+    {
+        Date = date;
+        Details = details;
+        _orderList.Add(this);
+        Id = _orderList.Count;
+        Items = new List<OrderItem>();
+        TotalPrice = TotalPriceCalc(Items);
+    }
+
     public Order(int date, params OrderItem[] items)
     {
         Date = date;
+        _orderList.Add(this);
+        Id = _orderList.Count;
+        Items = new List<OrderItem>(items);
+        TotalPrice = TotalPriceCalc(Items);
+    }
+
+    public Order(int date, string details, params OrderItem[] items)
+    {
+        Date = date;
+        Details = details;
         _orderList.Add(this);
         Id = _orderList.Count;
         Items = new List<OrderItem>(items);
@@ -101,6 +124,14 @@ public class Order
     public void AddOrderItem(OrderItem item)
     {
         Items.Add(item);
+    }
+
+    public void AddOrderItems(List<OrderItem> items)
+    {
+        foreach (OrderItem item in items)
+        {
+            this.Items.Add(item);
+        }
     }
 
     public static List<Order> GetAll()
