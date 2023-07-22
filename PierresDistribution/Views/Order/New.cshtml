@@ -10,6 +10,14 @@
     crossorigin="anonymous">
   </head>
   <body>
+    <header>
+      <form action="/" action="get">
+        <button type="submit">Home</button>
+      </form>     
+      <form action="/vendors/new" action="get">
+        <button type="submit">Add vendor</button>
+      </form>
+    </header>
     @{
     var vendor = (PierresDistribution.Models.Vendor) (@Model["vendor"]);
     var products = (List<PierresDistribution.Models.Product>) (@Model["products"]);

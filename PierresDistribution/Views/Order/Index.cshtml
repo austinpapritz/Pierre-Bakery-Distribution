@@ -10,6 +10,14 @@
     crossorigin="anonymous">
   </head>
   <body>
+    <header>
+      <form action="/" action="get">
+        <button type="submit">Home</button>
+      </form>     
+      <form action="/vendors/new" action="get">
+        <button type="submit">Add vendor</button>
+      </form>
+    </header>
     <h1>Orders for @Model.Name</h1>
 
     @foreach (Order order in @Model.VendorOrders){
@@ -18,9 +26,11 @@
         <h3>Deliver on @order.Date</h3>
         <ul>
         @foreach (OrderItem item in order.Items){
-          <li>@item.Product.Name (@item.Quantity)</li>
+          <li>@item.Product.Name (@item.Quantity) $@item.Subtotal</li>
         }
         </ul>
+        <h5>Total: $@order.TotalPrice</h5>
+        <hr>
       </div>
     </div>
     }

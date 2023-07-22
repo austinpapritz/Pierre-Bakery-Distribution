@@ -26,7 +26,7 @@ namespace PierresDistribution.Models
             for (int i = 0; i < 5; i++)
             {
                 // Different date for each order.
-                int orderDate = 710223 + i*1000;
+                int orderDate = 71023 + i*100;
 
                 // Vary the quantity for each item.
                 int quantity = 10 * (i + 1);
@@ -47,7 +47,7 @@ namespace PierresDistribution.Models
             for (int i = 1; i < 6; i++)
             {
                 // Different date for each order.
-                int orderDate = 710223 + i*1000;
+                int orderDate = 71323 + i*100;
 
                 // Vary the quantity for each item.
                 int quantity = 10 * (i + 2);
@@ -68,7 +68,7 @@ namespace PierresDistribution.Models
             for (int i = 2; i < 7; i++)
             {
                 // Different date for each order.
-                int orderDate = 710223 + i*1000;
+                int orderDate = 71523 + i*1000;
 
                 // Vary the quantity for each item.
                 int quantity = 10 * (i + 3);
