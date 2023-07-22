@@ -44,5 +44,23 @@ namespace PierresDistribution.Tests;
             Assert.AreEqual(testList.Count, result.Count);
         }
 
+        [TestMethod]
+        public void AddOrder_AddOrderToVendorOrders_ListOrder()
+        {
+            // Arrange
+            Order order1 = new(071223);
+            Order order2 = new(071323);
+            Order order3 = new(071423);
+            Vendor vendor = new("Vendor Name");
+            List<Order> testList = new List<Order> { order1, order2, order3};
+            List<Order> result = vendor.VendorOrders;
+            // Act
+            vendor.AddOrder(order1);
+            vendor.AddOrder(order2);
+            vendor.AddOrder(order3);
+            // Assert
+            CollectionAssert.AreEqual(testList, result);
+        }
+
         
     }

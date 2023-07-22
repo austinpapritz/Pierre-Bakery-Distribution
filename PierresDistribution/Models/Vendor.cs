@@ -28,9 +28,9 @@ public class Vendor
 
     // GetOrderByVendorId()
 
-    public static AddOrder(params Order[] orders)
+    public void AddOrder(Order order)
     {
-        VendorOrders.Add(orders);
+        VendorOrders.Add(order);
     }
 
     public static Vendor GetVendorById(int id)

@@ -15,6 +15,6 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 // DEVELOPMENT DATA ONLY, DELETE IN PRODUCTION
-DataInitializer.InitializeData();
+// DataInitializer.InitializeData();
 
 app.Run();
