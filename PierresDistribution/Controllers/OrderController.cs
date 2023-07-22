@@ -15,6 +15,7 @@ public class OrderController : Controller
     [HttpGet("/vendors/{vendorId}/orders/new")]
     public ActionResult New(int vendorId)
     {
+        // Add both vendor and product information to model
         Dictionary<string, object> model = new Dictionary<string, object> { };
         Vendor vendor = Vendor.GetVendorById(vendorId);
         List<Product> productList = Product.GetAll();
@@ -23,10 +24,20 @@ public class OrderController : Controller
         return View(model);
     }
 
-    // [HttpPost("/vendors/{vendorId}/orders")]
-    // public ActionResult Create(string product, decimal price, int quantity, int day, int month, int year, int vendorId)
-    // {
-    //     Product product = new
-    //     return RedirectToAction("Index", vendorId)
-    // }
+    [HttpPost("/vendors/{vendorId}/orders")]
+    public ActionResult Create( int vendorId, string product, decimal price, int quantity, int day, int month, int year)
+    {
+        // Find Product, combine it with the quantity value to make an OrderItem
+        Product newProduct = Product.FindByName(product);
+        OrderItem newOrderItem = new(newProduct, quantity);
+        // Combine date values into one number
+        int dateAsNumber = int.Parse(day.ToString("00") + month.ToString("00") + year.ToString("00"));
+        // Create new order, add the OrderItem to the order
+        Order newOrder = new(dateAsNumber);
+        newOrder.AddOrderItem(newOrderItem);
+        // Grab the vendor via Id and add the order their order list
+        Vendor vendor = Vendor.GetVendorById(vendorId);
+        vendor.AddOrder(newOrder);
+        return RedirectToAction("Index", new { vendorId = vendorId });
+    }
 }

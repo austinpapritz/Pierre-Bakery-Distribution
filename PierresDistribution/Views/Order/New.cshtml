@@ -37,13 +37,10 @@
           }
       </select>
       <select id="month" name="month">
-          @for (int i = 1; i <= 9; i++)
+          @for (int i = 1; i <= 12; i++)
           {
-              <option value="0@i">@i</option>
+              <option value="@i">@i</option>
           }
-              <option value="10">10</option>
-              <option value="11">10</option>
-              <option value="12">10</option>
       </select>
       <select id="year" name="year">
         <option value="23">2023</option>
