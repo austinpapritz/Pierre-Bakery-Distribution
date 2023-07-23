@@ -38,7 +38,6 @@ public class Pastry : Product
     }
 }
 
-
 public class OrderItem
 {
     public Product Product { get; set; }

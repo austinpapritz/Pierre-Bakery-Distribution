@@ -49,6 +49,11 @@ public class Vendor
         return _vendorList[id-1];
     }
 
+    public Order FindByDate(int date)
+    {
+        return this.VendorOrders.FirstOrDefault(order => order.Date == date);
+    }
+
     public static List<Vendor> GetAll()
     {
         return _vendorList;

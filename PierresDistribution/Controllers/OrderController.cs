@@ -7,12 +7,12 @@ public class OrderController : Controller
 {
     [HttpGet("/vendors/{vendorId}/orders")]
     public ActionResult Index(int vendorId)
-    { 
+    {
         Vendor vendor = Vendor.GetVendorById(vendorId);
         // Sort the vendor's order list by date ascending. 
         // Note: OrderBy() makes it an IEnumerable and ToList() turns it back into a List.
         vendor.VendorOrders = vendor.VendorOrders.OrderBy(order => order.Date).ToList();
-        return View(vendor); 
+        return View(vendor);
     }
 
     [HttpGet("/vendors/{vendorId}/orders/new")]
@@ -28,19 +28,28 @@ public class OrderController : Controller
     }
 
     [HttpPost("/vendors/{vendorId}/orders")]
-    public ActionResult Create( int vendorId, string product, int quantity, int day, int month, int year, string details)
+    public ActionResult Create(int vendorId, string product, int quantity, int day, int month, int year, string details)
     {
+        // Grab the vendor via Id and add the order their order list
+        Vendor vendor = Vendor.GetVendorById(vendorId);
         // Find Product, combine it with the quantity value to make an OrderItem
         Product newProduct = Product.FindByName(product);
         OrderItem newOrderItem = new(newProduct, quantity);
         // Combine date values into one number
         int dateAsNumber = int.Parse(day.ToString("00") + month.ToString("00") + year.ToString("00"));
-        // Create new order, add the OrderItem to the order
-        Order newOrder = new(dateAsNumber, details);
-        newOrder.AddOrderItem(newOrderItem);
-        // Grab the vendor via Id and add the order their order list
-        Vendor vendor = Vendor.GetVendorById(vendorId);
-        vendor.AddOrder(newOrder);
+        // See if order already exists for date.
+        Order existingOrder = vendor.FindByDate(dateAsNumber);
+        if (existingOrder != null)
+        {
+            existingOrder.AddOrderItem(newOrderItem);
+        }
+        else
+        {
+            // Create new order, add the OrderItem to the order, add order to vendor
+            Order newOrder = new(dateAsNumber, details);
+            newOrder.AddOrderItem(newOrderItem);
+            vendor.AddOrder(newOrder);
+        }
         return RedirectToAction("Index", new { vendorId = vendorId });
     }
 }
