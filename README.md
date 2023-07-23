@@ -33,7 +33,7 @@ _If there's no deployable site do the following:_
 
 ## Known Bugs
 
-* _Total order price only shows correctly for initialized data_
+_none_
 
 ## License
 

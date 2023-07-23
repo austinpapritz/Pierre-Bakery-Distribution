@@ -9,6 +9,9 @@ public class OrderController : Controller
     public ActionResult Index(int vendorId)
     { 
         Vendor vendor = Vendor.GetVendorById(vendorId);
+        // Sort the vendor's order list by date ascending. 
+        // Note: OrderBy() makes it an IEnumerable and ToList() turns it back into a List.
+        vendor.VendorOrders = vendor.VendorOrders.OrderBy(order => order.Date).ToList();
         return View(vendor); 
     }
 
