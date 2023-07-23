@@ -9,13 +9,13 @@ namespace PierresDistribution.Models
         public static void InitializeData()
         {
             // Test products.
-            Bread bread1 = new Bread("Pumpernickel Bread", 4.5m);
-            Bread bread2 = new Bread("Whole Wheat Bread", 5.0m);
-            Bread bread3 = new Bread("White Bread", 3.5m);
+            Bread bread1 = new Bread("Pumpernickel Bread", 4.50m);
+            Bread bread2 = new Bread("Whole Wheat Bread", 5.00m);
+            Bread bread3 = new Bread("White Bread", 3.50m);
 
-            Pastry pastry1 = new Pastry("Croissant", 2.5m);
-            Pastry pastry2 = new Pastry("Cannoli", 3.0m);
-            Pastry pastry3 = new Pastry("Eclaire", 4.0m);
+            Pastry pastry1 = new Pastry("Croissant", 2.50m);
+            Pastry pastry2 = new Pastry("Cannoli", 3.00m);
+            Pastry pastry3 = new Pastry("Eclaire", 4.00m);
 
             // Test vendors.
             Vendor vendor1 = new("Billy's Bakery", "Family-owned corner shop downtown.");

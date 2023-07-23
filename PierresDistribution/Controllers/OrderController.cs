@@ -25,7 +25,7 @@ public class OrderController : Controller
     }
 
     [HttpPost("/vendors/{vendorId}/orders")]
-    public ActionResult Create( int vendorId, string product, decimal price, int quantity, int day, int month, int year, string details)
+    public ActionResult Create( int vendorId, string product, int quantity, int day, int month, int year, string details)
     {
         // Find Product, combine it with the quantity value to make an OrderItem
         Product newProduct = Product.FindByName(product);

@@ -35,7 +35,7 @@
           <select id="product" name="product">
               @foreach (var product in products)
               {
-                  <option value="@product.Name" data-price="@product.Price">@product.Name</option>
+                  <option value="@product.Name">@product.Name ($@product.Price)</option>
               }
           </select>
 

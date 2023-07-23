@@ -59,6 +59,22 @@ public class OrderTests : IDisposable
     }
 
     [TestMethod]
+    public void AddOrderItems_AddOrderItemsInListToOrder_Void()
+    {
+        // Arrange
+        Pastry newPastry = new("Pretzel", 4.50m);
+        Pastry newPastry2 = new("Eclaire", 5.00m);
+        OrderItem newOrderItem = new(newPastry, 5);
+        OrderItem newOrderItem2 = new(newPastry2, 5);
+        Order newOrder = new(071223);
+        List<OrderItem> testList = new List<OrderItem> { newOrderItem, newOrderItem2 };
+        // Act
+        newOrder.AddOrderItems(testList);
+        // Assert
+        CollectionAssert.AreEqual(testList, newOrder.Items);
+    }
+
+    [TestMethod]
     public void GetAll_GetAllOrders_ListOrder()
     {
         // Arrange
