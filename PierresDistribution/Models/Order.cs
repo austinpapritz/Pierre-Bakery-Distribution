@@ -124,6 +124,8 @@ public class Order
     public void AddOrderItem(OrderItem item)
     {
         Items.Add(item);
+        // Update total price of order.
+        this.TotalPrice = TotalPriceCalc(this.Items);
     }
 
     public void AddOrderItems(List<OrderItem> items)
@@ -132,6 +134,8 @@ public class Order
         {
             this.Items.Add(item);
         }
+        // Update total price of order.
+        this.TotalPrice = TotalPriceCalc(this.Items);
     }
 
     public static List<Order> GetAll()
