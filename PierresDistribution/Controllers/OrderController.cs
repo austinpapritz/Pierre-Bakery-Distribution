@@ -18,7 +18,7 @@ public class OrderController : Controller
     [HttpGet("/vendors/{vendorId}/orders/new")]
     public ActionResult New(int vendorId)
     {
-        // Add both vendor and product information to model
+        // Add both vendor and product information to model.
         Dictionary<string, object> model = new Dictionary<string, object> { };
         Vendor vendor = Vendor.GetVendorById(vendorId);
         List<Product> productList = Product.GetAll();
@@ -33,22 +33,23 @@ public class OrderController : Controller
         // If qty was left blank, then skip adding the order and return to order list page.
         if (quantity != 0)
         {
-            // Grab the vendor via Id and add the order their order list
+            // Grab the vendor by Id 
             Vendor vendor = Vendor.GetVendorById(vendorId);
             // Find Product, combine it with the quantity value to make an OrderItem
             Product newProduct = Product.FindByName(product);
             OrderItem newOrderItem = new(newProduct, quantity);
             // Combine date values into one number
             int dateAsNumber = int.Parse(day.ToString("00") + month.ToString("00") + year.ToString("00"));
-            // See if order already exists for date.
+            // See if order already exists for the date.
             Order existingOrder = vendor.FindByDate(dateAsNumber);
             if (existingOrder != null)
-            {
+            {   
+                // If so, add the OrderItem to the existing order.
                 existingOrder.AddOrderItem(newOrderItem);
             }
             else
             {
-                // Create new order, add the OrderItem to the order, add order to vendor
+                // Otherwise, create new order, add the OrderItem to order, add order to vendor.
                 Order newOrder = new(dateAsNumber, details);
                 newOrder.AddOrderItem(newOrderItem);
                 vendor.AddOrder(newOrder);
