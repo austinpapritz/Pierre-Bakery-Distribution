@@ -28,7 +28,7 @@ _If there's no deployable site do the following:_
 * _Open your browser and enter `https://localhost:5001/` into the url bar, if it doesn't automatically._
 * _You may need to give yourself security certs by entering `$ dotnet dev-certs https --trust`._
 * _There will be a confirmation pop-up in your browser, you might also need to click `Advanced` and then click to proceed to site._
-* _To run tests, use your terminal to navigate into the `PierresDistribution.Tests` folder and then entering `$ dotnet test` in the terminal.
+* _To run tests, use your terminal to navigate into the `PierresDistribution.Tests` folder and then entering `$ dotnet test` in the terminal._
 * _Enjoy!_
 
 ## Known Bugs
