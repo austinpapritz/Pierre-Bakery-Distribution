@@ -26,19 +26,6 @@ public class Vendor
         VendorOrders = new List<Order> { };
     }
 
-
-    // Method for adding Order to list
-
-    // GetOrderByDay()
-
-    // GetOrderByWeek()
-
-    // GetOrderByMonth()
-
-    // GetOrderByYear()
-
-    // GetOrderByVendorId()
-
     public void AddOrder(Order order)
     {
         VendorOrders.Add(order);
@@ -46,7 +33,7 @@ public class Vendor
 
     public static Vendor GetVendorById(int id)
     {
-        return _vendorList[id-1];
+        return _vendorList[id - 1];
     }
 
     public Order FindByDate(int date)

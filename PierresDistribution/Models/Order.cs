@@ -17,7 +17,7 @@ public class Product
     public static List<Product> GetAll()
     {
         return _productList;
-    } 
+    }
     public static Product FindByName(string name)
     {
         return _productList.FirstOrDefault(product => product.Name == name);
@@ -42,15 +42,13 @@ public class OrderItem
 {
     public Product Product { get; set; }
     public int Quantity { get; set; }
-    public decimal Subtotal { get; }
+    public decimal Subtotal { get; set; }
     public OrderItem(Product product, int qty)
     {
         Product = product;
         Quantity = qty;
         Subtotal = qty * Product.Price;
     }
-
-
 }
 
 public class Order
@@ -146,6 +144,5 @@ public class Order
     {
         _orderList.Clear();
     }
-
 }
 

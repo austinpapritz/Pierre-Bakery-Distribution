@@ -43,7 +43,7 @@ public class OrderController : Controller
             // See if order already exists for the date.
             Order existingOrder = vendor.FindByDate(dateAsNumber);
             if (existingOrder != null)
-            {   
+            {
                 // If so, add the OrderItem to the existing order.
                 existingOrder.AddOrderItem(newOrderItem);
             }
@@ -54,7 +54,7 @@ public class OrderController : Controller
                 newOrder.AddOrderItem(newOrderItem);
                 vendor.AddOrder(newOrder);
             }
-        } 
+        }
         return RedirectToAction("Index", new { vendorId = vendorId });
     }
 }
