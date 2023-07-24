@@ -39,5 +39,3 @@ _none_
 
 _This app is not licensed and is free to use and distribute._
 _If you run in to any problems or have any suggestions/improvements, feel free to contact me on [linkedIn](https://www.linkedin.com/in/austin-papritz)!_
-
-Copyright (c) _July 14, 2023_ _Austin Papritz_
